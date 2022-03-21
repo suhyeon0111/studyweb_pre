@@ -1,0 +1,67 @@
+html {
+    font-size: 40px;
+}
+
+body {
+    background-color: #f0faee;
+}
+
+.login_box {
+    margin: auto;
+    width: 60px;
+    height: 50px;
+    padding: 90px 117px 91px 116px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 20px 20px 6px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: #fff;
+}
+
+.ERUM {
+    width: 284px;
+    height: 111px;
+    margin: 0 10px 25px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    /* font-family: NanumSquare_ac; */
+    font-size: 100px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #17a934;
+}
+
+.id_login {
+    width: 304px;
+    height: 73px;
+    margin: 25px 0 13px;
+    padding: 24px 253px 24px 26px;
+    border-radius: 36.5px;
+    border: solid 1px #17a934;
+    background-color: #fff;
+}
+
+.button_login {
+    width: 304px;
+    height: 73px;
+    margin: 17px 0 0;
+    padding: 15px 83px 14px;
+    border-radius: 36.5px;
+    background-color: #17a934;
+}
+
+.button_login_1 {
+    width: 138px;
+    height: 44px;
+    font-family: NanumSquare_ac;
+    font-size: 40px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
