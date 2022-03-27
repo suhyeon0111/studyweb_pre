@@ -33,8 +33,9 @@ body {
 }
 
 .id_login {
-    width: 304px;
-    height: 73px;
+    width: 80%;
+    height: 1.5rem;
+    align-items: left;
     margin: 25px 0 13px;
     padding: 24px 253px 24px 26px;
     border-radius: 36.5px;
@@ -43,8 +44,8 @@ body {
 }
 
 .button_login {
-    width: 304px;
-    height: 73px;
+    width: 7rem;
+    height: 1rem;
     margin: 17px 0 0;
     padding: 15px 83px 14px;
     border-radius: 36.5px;
