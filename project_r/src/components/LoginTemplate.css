@@ -1,9 +1,10 @@
-.container {
+.LoginTemplate {
     font-size: 10px;
     background-color: white;
     margin: 0 auto;
     width: 10rem;
     height: 20rem;
-    box-shadow: 20px 20px 6px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 30px;
 }
+

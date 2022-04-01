@@ -1,14 +1,20 @@
 import React from 'react';
 import LoginPage from './components/LoginPage';
-const style = {
-  background: '#f0faee',
+import LoginTemplate from './components/LoginTemplate';
+import './App.css';
 
-}
+document.body.style.background = 'red';
+
 const App = () => {
     return (
-      <div style={style}>
-        <LoginPage/>
+      <>
+      {/* <LoginTemplate>
+          <LoginPage/>
+      </LoginTemplate> */}
+      <div className='red'>
+
       </div>
+      </>
     ) ;
 }
 

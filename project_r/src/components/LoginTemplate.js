@@ -4,8 +4,10 @@ import "./LoginTemplate.css";
 const LoginTemplate = () => {
     return (
         <>
-        <div className="container">
-             
+        <div className="LoginTemplate">
+            <div classname="ERUM">
+                ERUM
+            </div>
         </div>
         </>
     )
