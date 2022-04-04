@@ -1,0 +1,64 @@
+.LoginTemplate {
+    font-size: 10px;
+    background-color: white;
+    width: 23rem;
+    height: 32rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 90px;
+    /* 중앙정렬 */
+    margin: 13% auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* 세로정렬 */
+    /* margin-top: 13%; */
+}
+
+.ERUM {
+    /* 인라인 속성과 블럭속성 둘 다 포함 */
+    display: inline-block; 
+    width: 100%;
+    margin-top: 20%;
+    text-align: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    font-family: NanumSquare_ac;
+    font-weight: 800;
+    font-size: 85px;
+    color: #17a934;
+}
+
+.LoginId {
+    display: block; 
+    width: 70%;
+    height: 3.5rem;
+    margin: 2rem auto 2rem ;
+    border-radius: 36.5px;
+    border: solid 1px #17a934;
+    background-color: #fff;
+}
+
+.LoginPassword {
+    display: block; 
+    width: 70%;
+    height: 3.5rem;
+    margin: 0 auto 2rem ;
+    border-radius: 36.5px;
+    border: solid 1px #17a934;
+    background-color: #fff;
+}
+
+.LoginButton {
+    display: block; 
+    width: 70%;
+    height: 3.5rem;
+    margin: 0 auto 3rem ;
+    border-radius: 36.5px;    
+    /* 글자 속성 */
+    text-align: center;
+    line-height: 4rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    font-family: NanumSquare_ac;
+    font-weight: 800;
+    font-size: 40px;
+    color: #ffffff;
+    background-color: #17a934;
+}
