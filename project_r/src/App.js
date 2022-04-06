@@ -1,29 +1,33 @@
 import React from 'react';
-// import LoginPage from './components//LoginPage/LoginPage';
-import LoginTemplate from './components/LoginPage/LoginTemplate';
+import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import { Link } from 'react-router-dom';
+import MainPage from './components/MainPage/MainPage';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 document.body.style.background = '#f0faee';
 
 const App = () => {
-    return (
-      <>
-      {/* <Link to='/login'>
-        <button>LoginPage</button>
-      </Link>
-      <Link to='/register'>
-        <button>RegisterPage</button>
-      </Link>
-      <Link to='/calendar'>
-        <button>RegisterPage</button>
-      </Link> */}
-      <LoginTemplate>
+  return (
+    <>
+      <div>
+        <Routes>
+          <Route path="/" exact={true} element={<MainPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
-      </LoginTemplate>
-      </>
-    ) ;
-}
+          <Route
+            render={({ location }) => {
+              <div>
+                <h1> 존재하지 않는 페이지입니다:</h1>
+                <p>{location.pathname}</p>
+              </div>;
+            }}
+          />
+        </Routes>
+      </div>
+    </>
+  );
+};
 
 export default App;
