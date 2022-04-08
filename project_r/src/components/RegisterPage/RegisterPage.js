@@ -7,10 +7,9 @@ const RegisterPage = () => {
       <div className="ERUM">ERUM</div>
       <div>
         <div className="LoginId"></div>
-        <div className="LoginPassword"></div>
-        <div className="LoginPassword"></div>
+        <div className="LoginPassword_1"></div>
+        <div className="LoginPassword_2"></div>
         <div className="LoginButton">LOGIN</div>
-        <div className="RegisterButton"> 회원가입 </div>
       </div>
     </div>
   );

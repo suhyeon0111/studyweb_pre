@@ -17,7 +17,7 @@
     /* 인라인 속성과 블럭속성 둘 다 포함 */
     display: inline-block; 
     width: 100%;
-    margin-top: 20%;
+    margin-top: 15%;
     text-align: center;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
     font-family: NanumSquare_ac;
@@ -30,17 +30,27 @@
     display: block; 
     width: 70%;
     height: 3.5rem;
-    margin: 2rem auto 2rem ;
+    margin: 0.7rem auto 1.5rem ;
     border-radius: 36.5px;
     border: solid 1px #17a934;
     background-color: #fff;
 }
 
-.LoginPassword {
+.LoginPassword_1 {
     display: block; 
     width: 70%;
     height: 3.5rem;
-    margin: 0 auto 2rem ;
+    margin: 0 auto 1.5rem ;
+    border-radius: 36.5px;
+    border: solid 1px #17a934;
+    background-color: #fff;
+}
+
+.LoginPassword_2 {
+    display: block; 
+    width: 70%;
+    height: 3.5rem;
+    margin: 0 auto 1.5rem ;
     border-radius: 36.5px;
     border: solid 1px #17a934;
     background-color: #fff;

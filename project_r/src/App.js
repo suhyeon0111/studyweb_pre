@@ -2,7 +2,7 @@ import React from 'react';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import MainPage from './components/MainPage/MainPage';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 document.body.style.background = '#f0faee';
