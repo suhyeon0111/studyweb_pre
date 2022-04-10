@@ -27,9 +27,9 @@
 }
 
 .LoginId {
-    display: block; 
+    display: flex; 
     width: 70%;
-    height: 3.5rem;
+    height: 3rem;
     margin: 0.7rem auto 1.5rem ;
     border-radius: 36.5px;
     border: solid 1px #17a934;
@@ -37,9 +37,9 @@
 }
 
 .LoginPassword_1 {
-    display: block; 
+    display: flex; 
     width: 70%;
-    height: 3.5rem;
+    height: 3rem;
     margin: 0 auto 1.5rem ;
     border-radius: 36.5px;
     border: solid 1px #17a934;
@@ -47,9 +47,9 @@
 }
 
 .LoginPassword_2 {
-    display: block; 
+    display: flex; 
     width: 70%;
-    height: 3.5rem;
+    height: 3rem;
     margin: 0 auto 1.5rem ;
     border-radius: 36.5px;
     border: solid 1px #17a934;
@@ -71,4 +71,8 @@
     font-size: 40px;
     color: #ffffff;
     background-color: #17a934;
+}
+.icon {
+    margin-left: 8px;
+    margin-top: 7px;
 }
