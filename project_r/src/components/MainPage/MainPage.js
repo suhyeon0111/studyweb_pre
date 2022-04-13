@@ -1,11 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import './MainPage.css';
 
-const MainPage = () => {
+function MainPage() {
+  const [date, setDate] = useState(new Date());
+
   return (
-    <div>
-      <h1>MainPage입니다.</h1>
+    <div className='app'>
+      <h1 className='text-center'>ERUM</h1>
+      <div className='calendar-container'>
+        <Calendar onChange={setDate} value={date} />
+      </div>
+      <p className='text-bottom'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {date.toDateString()}
+      </p>
     </div>
   );
-};
+}
 
 export default MainPage;
