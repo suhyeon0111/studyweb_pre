@@ -14,7 +14,7 @@ const LoginPage = () => {
         <div className="LoginPassword">
           <FaLock className="icon" size="31" color="#17a934" />
         </div>
-        <div className="LoginButton">LOGIN</div>
+        <button className="LoginButton">LOGIN</button>
         <div className="RegisterButton"> 회원가입 </div>
       </div>
     </div>

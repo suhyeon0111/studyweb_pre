@@ -17,7 +17,7 @@
     /* 인라인 속성과 블럭속성 둘 다 포함 */
     display: inline-block; 
     width: 100%;
-    margin-top: 20%;
+    margin-top: 15%;
     text-align: center;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
     font-family: NanumSquare_ac;
@@ -36,12 +36,22 @@
     background-color: #fff;
 }
 
-.LoginPassword {
+.LoginPassword_1 {
     display: flex; 
     width: 70%;
     height: 3rem;
     margin: 0 auto 1.5rem ;
-    border-radius: 36.5px;    
+    border-radius: 36.5px;
+    border: solid 1px #17a934;
+    background-color: #fff;
+}
+
+.LoginPassword_2 {
+    display: flex; 
+    width: 70%;
+    height: 3rem;
+    margin: 0 auto 1.5rem ;
+    border-radius: 36.5px;
     border: solid 1px #17a934;
     background-color: #fff;
 }
@@ -61,27 +71,7 @@
     font-size: 40px;
     color: #ffffff;
     background-color: #17a934;
-     
-    border: 0;
-    outline: 0;
 }
-
-.RegisterButton {
-    display: block; 
-    width: 70%;
-    height: 2rem;
-    margin: 0 auto;
-    border-radius: 36.5px;    
-    /* 글자 속성 */
-    text-align: center;
-    line-height: 2rem;
-    /* text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16); */
-    font-family: NanumSquare_ac;
-    font-weight: 800;
-    font-size: 20px;
-    color: #17a934;
-}
-
 .icon {
     margin-left: 8px;
     margin-top: 7px;

@@ -17,7 +17,7 @@ const RegisterPage = () => {
         <div className="LoginPassword_2">
           <FaLock className="icon" size="31" color="#17a934" />
         </div>
-        <div className="LoginButton">LOGIN</div>
+        <button className="LoginButton">LOGIN</button>
       </div>
     </div>
   );
