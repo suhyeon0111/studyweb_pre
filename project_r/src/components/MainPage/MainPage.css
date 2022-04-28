@@ -1,6 +1,6 @@
 .text-center {
     display: inline-block; 
-    margin: 0 auto;
+    text-align: center;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
     font-family: NanumSquare_ac;
     font-weight: 900;
@@ -8,15 +8,21 @@
     color: #17a934;
 }
 .react-calendar { 
-    width: 75%;
-    max-width: 100%;
+    /* 중앙정렬 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*                   */
+    min-width: 45rem;
+    height: 45rem;
     background-color: #fff;
     color: #222;
     border-radius: 8px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
-    margin: 0 auto;
+    /* margin: 0 auto; */
    }
 
    .react-calendar__navigation {
@@ -101,6 +107,12 @@
     background: #30B24A;
     color: white;
    }
+   .react-calendar__viewContainer {
+    height: 90%;
+   }
+   .react-calendar__month-view {
+       height: 100%;
+   }
    .react-calendar__month-view__days {
-    height: 35rem;
+        height: 39rem;
    }

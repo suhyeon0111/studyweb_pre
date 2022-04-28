@@ -8,10 +8,8 @@ function MainPage() {
 
   return (
     <div className='app'>
-      <h1 className='text-center'>ERUM</h1>
-      <div className='calendar-container'>
+      <div className='text-center'><span>ERUM</span></div>
         <Calendar onChange={setDate} value={date} />
-      </div>
     </div>
   );
 }
