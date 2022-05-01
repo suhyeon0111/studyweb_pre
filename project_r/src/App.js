@@ -18,16 +18,7 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/addtime" element={<AddtimePage />} />
-          <Route path="/time" element={<TimePage/>} />
-
-          {/* <Route
-            render={({ location }) => {
-              <div>
-                <h1> 존재하지 않는 페이지입니다:</h1>
-                <p>{location.pathname}</p>
-              </div>;
-            }}
-          /> */}
+          <Route path="/time" element={<TimePage />} />
         </Routes>
       </div>
     </>
