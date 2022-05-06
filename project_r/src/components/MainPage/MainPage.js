@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import TimePage from '../TimePage/TimePage';
-
 import './MainPage.css';
 import 'react-router-dom';
 
