@@ -5,11 +5,13 @@ const TimePage = () => {
   return (
     <>
       <div className="top-box">
-        <div className="calendar-button">
-          <BsArrowLeftCircle /> 달력
+        <div>
+          <button className="calendar-button">
+            <BsArrowLeftCircle /> 달력
+          </button>
         </div>
         <div className="time-ERUM">ERUM</div>
-        <div className="login-box">
+        <div>
           <button className="login-button">LOGOUT</button>
         </div>
       </div>
