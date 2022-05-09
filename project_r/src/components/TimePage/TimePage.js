@@ -7,10 +7,13 @@ const TimePage = () => {
       <div className="top-box">
         <div>
           <button className="calendar-button">
-            <BsArrowLeftCircle /> 달력
+            <BsArrowLeftCircle className="icon" size={50} />
+            <span>달력</span>
           </button>
         </div>
-        <div className="time-ERUM">ERUM</div>
+        <div className="time-ERUM">
+          <span>ERUM</span>
+        </div>
         <div>
           <button className="login-button">LOGOUT</button>
         </div>
