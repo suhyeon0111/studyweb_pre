@@ -166,8 +166,8 @@ const AddTimePage = () => {
     axios
       .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
       .then((response) => {
-        setData(response);
-        console.log(response);
+        setData(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         // handle error

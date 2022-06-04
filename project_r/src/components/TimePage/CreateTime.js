@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import queryString from 'query-string';
-import { Select } from 'antd';
-const { Option } = Select;
+// import { Select } from 'antd';
+// const { Option } = Select;
 
 function CreateTime({ onChange, onCreate }) {
   const [disabled, setDisabled] = useState(false);
@@ -12,59 +12,104 @@ function CreateTime({ onChange, onCreate }) {
 
   // 시간 선택 변수, 함수
   const [Selected1, setSelected1] = useState(0);
-  const [Selected2, setSelected2] = useState(0);
+  const [Selected2, setSelected2] = useState('');
   const [Selected3, setSelected3] = useState('');
   const [Selected4, setSelected4] = useState('');
 
+  // useEffect(() => {
+  //   // console.log(Selected1);
+  // }, [Selected1]);
+
+  useEffect(() => {
+    //console.log(Selected2);
+  }, [Selected2]);
+
+  useEffect(() => {
+    //console.log(Selected3);
+  }, [Selected3]);
+
+  useEffect(() => {
+    //console.log(Selected4);
+  }, [Selected4]);
+
   const HourOptions = [
-    '00',
-    '01',
-    '02',
-    '03',
-    '04',
-    '05',
-    '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
-    '21',
-    '22',
-    '23',
+    { key: 0, value: '00' },
+    { key: 1, value: '01' },
+    { key: 2, value: '02' },
+    { key: 3, value: '03' },
+    { key: 4, value: '04' },
+    { key: 5, value: '05' },
+    { key: 6, value: '06' },
+    { key: 7, value: '07' },
+    { key: 8, value: '08' },
+    { key: 9, value: '09' },
+    { key: 10, value: '10' },
+    { key: 11, value: '11' },
+    { key: 12, value: '12' },
+    { key: 13, value: '13' },
+    { key: 14, value: '14' },
+    { key: 15, value: '15' },
+    { key: 16, value: '16' },
+    { key: 17, value: '17' },
+    { key: 18, value: '18' },
+    { key: 19, value: '19' },
+    { key: 20, value: '20' },
+    { key: 21, value: '21' },
+    { key: 22, value: '22' },
+    { key: 23, value: '23' },
   ];
-  // const MinuteOptions = [
-  //   { key: 1, value: '00' },
-  //   { key: 2, value: '10' },
-  //   { key: 3, value: '20' },
-  //   { key: 4, value: '30' },
-  //   { key: 5, value: '40' },
-  //   { key: 6, value: '50' },
+  // const HourOptions = [
+  //   '00',
+  //   '01',
+  //   '02',
+  //   '03',
+  //   '04',
+  //   '05',
+  //   '06',
+  //   '07',
+  //   '08',
+  //   '09',
+  //   '10',
+  //   '11',
+  //   '12',
+  //   '13',
+  //   '14',
+  //   '15',
+  //   '16',
+  //   '17',
+  //   '18',
+  //   '19',
+  //   '20',
+  //   '21',
+  //   '22',
+  //   '23',
   // ];
-  const MinuteOptions = ['00', '10', '20', '30', '40', '50'];
+  const MinuteOptions = [
+    { key: 0, value: '00' },
+    { key: 1, value: '10' },
+    { key: 2, value: '20' },
+    { key: 3, value: '30' },
+    { key: 4, value: '40' },
+    { key: 5, value: '50' },
+  ];
+  // const MinuteOptions = ['00', '10', '20', '30', '40', '50'];
 
   // 시간선택
   const handleSelect1 = (e) => {
     setSelected1(e.target.value);
-    console.log(Selected1);
+    console.log(e.target.value);
   };
   const handleSelect2 = (e) => {
     setSelected2(e.target.value);
+    console.log(Selected2);
   };
   const handleSelect3 = (e) => {
     setSelected3(e.target.value);
+    console.log(Selected3);
   };
   const handleSelect4 = (e) => {
     setSelected4(e.target.value);
+    console.log(Selected4);
   };
 
   // 과목 이름 핸들링 함수
@@ -74,16 +119,16 @@ function CreateTime({ onChange, onCreate }) {
   };
 
   // 제출 핸들링 함수
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     setDisabled(true);
     event.preventDefault();
-    await new Promise((r) => setTimeout(r, 1000));
+    // await new Promise((r) => setTimeout(r, 1000));
     setDisabled(false);
 
-    console.log(setSelected1);
-    console.log(setSelected2);
-    console.log(setSelected3);
-    console.log(setSelected4);
+    // console.log(Selected1);
+    // console.log(Selected2);
+    // console.log(Selected3);
+    // console.log(Selected4);
 
     // 현재 플레너 날짜 쿼리스트링 빼오기
     let qs = queryString.parse(window.location.search);
@@ -134,16 +179,16 @@ function CreateTime({ onChange, onCreate }) {
             <div>
               시작
               <select value={Selected1} onChange={handleSelect1}>
-                {HourOptions.map((item) => (
-                  <option value={item} key={item}>
-                    {item}
+                {HourOptions.map((item, idx) => (
+                  <option key={idx} value={Number(item.value)}>
+                    {item.value}
                   </option>
                 ))}
               </select>
               <select value={Selected2} onChange={handleSelect2}>
-                {MinuteOptions.map((item) => (
-                  <option value={item} key={item}>
-                    {item}
+                {MinuteOptions.map((item, idx) => (
+                  <option key={idx} value={Number(item.value)}>
+                    {item.value}
                   </option>
                 ))}
               </select>
@@ -152,20 +197,20 @@ function CreateTime({ onChange, onCreate }) {
           <div className="select-time">
             <div>
               종료
-              <select onChange={handleSelect3} value={Selected3}>
-                {HourOptions.map((item) => (
-                  <option value={item} key={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-              {/* <select onChange={handleSelect4} value={Selected4}>
-                {MinuteOptions.map((item, index) => (
-                  <option key={item.key} value={item.key}>
+              <select value={Selected3} onChange={handleSelect3}>
+                {HourOptions.map((item, idx) => (
+                  <option key={idx} value={item.value}>
                     {item.value}
                   </option>
                 ))}
-              </select> */}
+              </select>
+              <select value={Selected4} onChange={handleSelect4}>
+                {MinuteOptions.map((item, idx) => (
+                  <option key={idx} value={item.value}>
+                    {item.value}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           {/* 시간표 추가 버튼 */}
