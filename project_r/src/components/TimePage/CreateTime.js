@@ -119,10 +119,10 @@ function CreateTime({ onChange, onCreate }) {
   };
 
   // 제출 핸들링 함수
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     setDisabled(true);
     event.preventDefault();
-    // await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 1000));
     setDisabled(false);
 
     // console.log(Selected1);

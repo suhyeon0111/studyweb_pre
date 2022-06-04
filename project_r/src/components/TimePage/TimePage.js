@@ -1,6 +1,7 @@
 import '../../styles/TimePage.css';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import React, { createElement, useEffect, useState, useRef } from 'react';
+import axios from 'axios';
 import MyModal from './Mymodal';
 import randomColor from 'randomcolor';
 import { Helmet } from 'react-helmet';
@@ -37,6 +38,8 @@ const DataList = [
 ];
 
 const TimePage = () => {
+  let qs = queryString.parse(window.location.search);
+  const [Data, setData] = useState([]);
   const [users, setUsers] = useState([]); // 데이터 상태관리 변수
   const [inputs, setInputs] = useState({
     subjectname: '',
@@ -77,7 +80,7 @@ const TimePage = () => {
 
   // 현재 url에서 쿼리값 받아서 다시 라우팅
   const logout_onclick = (e) => {
-    let qs = queryString.parse(window.location.search);
+    // let qs = queryString.parse(window.location.search);
     console.log(Object.values(qs));
     window.location.href = `/report?created_at=${Object.values(qs)}`;
   };
@@ -115,23 +118,36 @@ const TimePage = () => {
         borderStyle: 'solid',
         float: 'left',
         color:
-          i < DataList.length &&
-          key >= DataList[i].starttime &&
-          key <= DataList[i].endtime
+          i < Data.length && key >= Data[i].starttime && key <= Data[i].endtime
             ? color[i]
             : 'white',
         backgroundColor:
-          i < DataList.length &&
-          key >= DataList[i].starttime &&
-          key <= DataList[i].endtime
+          i < Data.length && key >= Data[i].starttime && key <= Data[i].endtime
             ? color[i]
             : 'white',
       }}
     >
-      {i < DataList.length && key === DataList[i].endtime ? (i += 1) : null}
+      {i < Data.length && key === Data[i].endtime ? (i += 1) : null}
     </div>
   ));
 
+  // GET 데이터 불러오기
+  const onClick = (e) => {
+    // setData(DataList);
+    axios
+      .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      })
+      .then(() => {
+        // always executed
+      });
+  };
   return (
     <>
       <Helmet>
@@ -162,6 +178,9 @@ const TimePage = () => {
         <div className="timelist-box">{stdItem}</div>
         <div className="second-box">{listItem}</div>
         <div className="third-box">
+          <button className="test-button" onClick={onClick}>
+            데이터 불러오기
+          </button>
           <CreateTime
             subjectname={subjectname}
             onChange={onChange}
