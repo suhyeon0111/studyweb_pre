@@ -26,6 +26,34 @@ const DataList = [
     color: 2,
     created_at: '20220601',
   },
+  {
+    subject: '과학',
+    starttime: 410,
+    endtime: 600,
+    color: 3,
+    created_at: '20220601',
+  },
+  {
+    subject: '국어',
+    starttime: 1300,
+    endtime: 1420,
+    color: 4,
+    created_at: '20220601',
+  },
+  {
+    subject: '국어',
+    starttime: 1500,
+    endtime: 1600,
+    color: 5,
+    created_at: '20220601',
+  },
+  {
+    subject: '논리회로',
+    starttime: 1910,
+    endtime: 2230,
+    color: 6,
+    created_at: '20220601',
+  },
 ];
 
 const AddTimePage = () => {
@@ -78,7 +106,7 @@ const AddTimePage = () => {
   // axios
   //   .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
   //   .then((response) => {
-  //     setData(...response.data);
+  //     setData(DataList);
   //     console.log(response);
   //   })
   //   .catch((error) => {
@@ -132,6 +160,10 @@ const AddTimePage = () => {
 
   // 총 공부시간
   const number = 0;
+
+  const onClick = (e) => {
+    setData(DataList);
+  };
   return (
     <>
       <Helmet>
@@ -192,6 +224,9 @@ const AddTimePage = () => {
         <div className="second-box">{listItem}</div>
         <div className="third-box">
           <div className="Addsubject-box">
+            <button className="test-button" onClick={onClick}>
+              데이터 불러오기
+            </button>
             <div>오늘의 공부시간</div>
             <span style={{ margin: '0 auto' }}> {number}시간</span>
           </div>

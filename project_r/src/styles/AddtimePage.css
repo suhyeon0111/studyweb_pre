@@ -94,3 +94,15 @@
     left:70%;
     bottom: 30%;
 }
+
+.test-button {
+    width: 265px;
+    height: 70px;
+    border-radius: 40px;
+    border-style: none;
+    margin: 0 0 30px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 70px;
+    background-color: rgb(227, 227, 227);
+}

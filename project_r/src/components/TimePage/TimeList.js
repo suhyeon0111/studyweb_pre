@@ -24,6 +24,7 @@ function Time({ user }) {
         textAlign: 'center',
       }}
     >
+      수학
       {user.subject}
     </div>
   );

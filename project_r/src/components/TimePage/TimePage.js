@@ -18,22 +18,22 @@ const DataList = [
     color: 1,
     created_at: '20220601',
   },
-  // {
-  //   id: 2,
-  //   subject: '국어',
-  //   starttime: 240,
-  //   endtime: 410,
-  //   color: 2,
-  //   created_at: '20220601',
-  // },
-  // {
-  //   id: 3,
-  //   subject: '과학',
-  //   starttime: 800,
-  //   endtime: 900,
-  //   color: 3,
-  //   created_at: '20220601',
-  // },
+  {
+    id: 2,
+    subject: '국어',
+    starttime: 240,
+    endtime: 410,
+    color: 2,
+    created_at: '20220601',
+  },
+  {
+    id: 3,
+    subject: '과학',
+    starttime: 800,
+    endtime: 900,
+    color: 3,
+    created_at: '20220601',
+  },
 ];
 
 const TimePage = () => {
@@ -162,7 +162,11 @@ const TimePage = () => {
         <div className="timelist-box">{stdItem}</div>
         <div className="second-box">{listItem}</div>
         <div className="third-box">
-          <CreateTime onChange={onChange} onCreate={onCreate} />
+          <CreateTime
+            subjectname={subjectname}
+            onChange={onChange}
+            onCreate={onCreate}
+          />
         </div>
       </div>
     </>

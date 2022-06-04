@@ -42,7 +42,7 @@ function MainPage() {
     }
     const fullDay = Day[3] + Day[1] + Day[2];
     console.log(fullDay);
-    window.location.href = `/plan?create_at=${fullDay}`;
+    window.location.href = `/plan?created_at=${fullDay}`;
 
     axios
       .get(`http://127.0.0.1:8000/plan?created_at=${fullDay}`)
