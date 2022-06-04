@@ -162,8 +162,22 @@ const AddTimePage = () => {
   const number = 0;
 
   const onClick = (e) => {
-    setData(DataList);
+    // setData(DataList);
+    axios
+      .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
+      .then((response) => {
+        setData(response);
+        console.log(response);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      })
+      .then(() => {
+        // always executed
+      });
   };
+
   return (
     <>
       <Helmet>
