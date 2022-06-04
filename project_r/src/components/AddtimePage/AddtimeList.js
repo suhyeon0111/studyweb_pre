@@ -1,7 +1,6 @@
 import React from 'react';
-import randomColor from 'randomcolor';
 
-function Time({ user }) {
+function Addtime({ user }) {
   const color = [
     '#ffafb0',
     '#fdd0ac',
@@ -14,7 +13,7 @@ function Time({ user }) {
   return (
     <div
       style={{
-        backgroundColor: randomColor(),
+        backgroundColor: color[1],
         width: '150px',
         height: '50px',
         color: 'black',
@@ -33,7 +32,7 @@ function TimeList({ users }) {
   return (
     <div>
       {users.map((user) => (
-        <Time user={user} key={user.id} />
+        <Addtime user={user} key={user.id} />
       ))}
     </div>
   );

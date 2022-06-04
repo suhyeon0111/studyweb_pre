@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import queryString from 'query-string';
+import Select from 'react-select';
 
 function CreateTime({ onChange, onCreate }) {
   const [disabled, setDisabled] = useState(false);
@@ -81,8 +82,8 @@ function CreateTime({ onChange, onCreate }) {
     // 내가 보내는 데이터 객체 생성
     let body = {
       subject: name,
-      starttime: 0,
-      endtime: 0,
+      starttime: setSelected1 + setSelected2,
+      endtime: setSelected3 + setSelected4,
       created_at: Object.values(qs),
     };
 
