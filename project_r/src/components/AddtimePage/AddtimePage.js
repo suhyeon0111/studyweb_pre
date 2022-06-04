@@ -129,7 +129,7 @@ const AddTimePage = () => {
         borderStyle: 'solid',
         float: 'left',
         color:
-          i < Data.lenght && key >= Data[i].starttime && key <= Data[i].endtime
+          i < Data.length && key >= Data[i].starttime && key <= Data[i].endtime
             ? color[i]
             : 'white',
         backgroundColor:

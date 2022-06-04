@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import queryString from 'query-string';
-import Select from 'react-select';
+import { Select } from 'antd';
+const { Option } = Select;
 
 function CreateTime({ onChange, onCreate }) {
   const [disabled, setDisabled] = useState(false);
@@ -10,8 +11,8 @@ function CreateTime({ onChange, onCreate }) {
   const [name, setName] = useState('');
 
   // 시간 선택 변수, 함수
-  const [Selected1, setSelected1] = useState('');
-  const [Selected2, setSelected2] = useState('');
+  const [Selected1, setSelected1] = useState(0);
+  const [Selected2, setSelected2] = useState(0);
   const [Selected3, setSelected3] = useState('');
   const [Selected4, setSelected4] = useState('');
 
@@ -41,12 +42,20 @@ function CreateTime({ onChange, onCreate }) {
     '22',
     '23',
   ];
-
+  // const MinuteOptions = [
+  //   { key: 1, value: '00' },
+  //   { key: 2, value: '10' },
+  //   { key: 3, value: '20' },
+  //   { key: 4, value: '30' },
+  //   { key: 5, value: '40' },
+  //   { key: 6, value: '50' },
+  // ];
   const MinuteOptions = ['00', '10', '20', '30', '40', '50'];
 
   // 시간선택
   const handleSelect1 = (e) => {
     setSelected1(e.target.value);
+    console.log(Selected1);
   };
   const handleSelect2 = (e) => {
     setSelected2(e.target.value);
@@ -82,15 +91,15 @@ function CreateTime({ onChange, onCreate }) {
     // 내가 보내는 데이터 객체 생성
     let body = {
       subject: name,
-      starttime: setSelected1 + setSelected2,
-      endtime: setSelected3 + setSelected4,
-      created_at: Object.values(qs),
+      starttime: Number(setSelected1 + setSelected2),
+      endtime: Number(setSelected3 + setSelected4),
+      created_at: Number(Object.values(qs)),
     };
-
+    console.log(body);
     // 직접 보내기
-    axios
-      .post(`plan?created_at=${Object.values(qs)}`, body)
-      .then((res) => console.log(res));
+    // axios
+    //   .post(`plan?created_at=${Object.values(qs)}`, body)
+    //   .then((res) => console.log(res));
   };
 
   const InputStyle = {
@@ -124,14 +133,14 @@ function CreateTime({ onChange, onCreate }) {
           <div className="select-time">
             <div>
               시작
-              <select onChange={handleSelect1} value={Selected1}>
+              <select value={Selected1} onChange={handleSelect1}>
                 {HourOptions.map((item) => (
                   <option value={item} key={item}>
                     {item}
                   </option>
                 ))}
               </select>
-              <select onChange={handleSelect2} value={Selected2}>
+              <select value={Selected2} onChange={handleSelect2}>
                 {MinuteOptions.map((item) => (
                   <option value={item} key={item}>
                     {item}
@@ -150,13 +159,13 @@ function CreateTime({ onChange, onCreate }) {
                   </option>
                 ))}
               </select>
-              <select onChange={handleSelect4} value={Selected4}>
-                {MinuteOptions.map((item) => (
-                  <option value={item} key={item}>
-                    {item}
+              {/* <select onChange={handleSelect4} value={Selected4}>
+                {MinuteOptions.map((item, index) => (
+                  <option key={item.key} value={item.key}>
+                    {item.value}
                   </option>
                 ))}
-              </select>
+              </select> */}
             </div>
           </div>
           {/* 시간표 추가 버튼 */}
