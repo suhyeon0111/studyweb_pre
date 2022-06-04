@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Addtime({ user }) {
+let i = -1;
+
+function Addtime({ users }) {
   const color = [
     '#ffafb0',
     '#fdd0ac',
@@ -9,11 +11,11 @@ function Addtime({ user }) {
     '#aee4ff',
     '#caa6fe',
   ];
-
+  i += 1;
   return (
     <div
       style={{
-        backgroundColor: color[1],
+        backgroundColor: color[i],
         width: '150px',
         height: '50px',
         color: 'black',
@@ -23,19 +25,31 @@ function Addtime({ user }) {
         textAlign: 'center',
       }}
     >
-      {user.subject}
+      {users.subject}
     </div>
   );
 }
 
-function TimeList({ users }) {
+function AddTimeList({ users }) {
+  const color = [
+    '#ffafb0',
+    '#fdd0ac',
+    '#fdfa87',
+    '#bee9b4',
+    '#aee4ff',
+    '#caa6fe',
+    '#caa6fe',
+    '#caa6fe',
+    '#caa6fe',
+    '#caa6fe',
+  ];
   return (
     <div>
-      {users.map((user) => (
-        <Addtime user={user} key={user.id} />
+      {users.map((users) => (
+        <Addtime users={users} key={users.id} />
       ))}
     </div>
   );
 }
 
-export default TimeList;
+export default AddTimeList;

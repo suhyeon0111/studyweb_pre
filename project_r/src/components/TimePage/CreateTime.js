@@ -11,7 +11,7 @@ function CreateTime({ onChange, onCreate }) {
   const [name, setName] = useState('');
 
   // 시간 선택 변수, 함수
-  const [Selected1, setSelected1] = useState(0);
+  const [Selected1, setSelected1] = useState('');
   const [Selected2, setSelected2] = useState('');
   const [Selected3, setSelected3] = useState('');
   const [Selected4, setSelected4] = useState('');
@@ -97,6 +97,7 @@ function CreateTime({ onChange, onCreate }) {
   // 시간선택
   const handleSelect1 = (e) => {
     setSelected1(e.target.value);
+
     console.log(e.target.value);
   };
   const handleSelect2 = (e) => {
@@ -119,10 +120,10 @@ function CreateTime({ onChange, onCreate }) {
   };
 
   // 제출 핸들링 함수
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     setDisabled(true);
-    event.preventDefault();
-    await new Promise((r) => setTimeout(r, 1000));
+    // event.preventDefault();
+    // await new Promise((r) => setTimeout(r, 1000));
     setDisabled(false);
 
     // console.log(Selected1);
@@ -199,14 +200,14 @@ function CreateTime({ onChange, onCreate }) {
               종료
               <select value={Selected3} onChange={handleSelect3}>
                 {HourOptions.map((item, idx) => (
-                  <option key={idx} value={item.value}>
+                  <option key={idx} value={Number(item.value)}>
                     {item.value}
                   </option>
                 ))}
               </select>
               <select value={Selected4} onChange={handleSelect4}>
                 {MinuteOptions.map((item, idx) => (
-                  <option key={idx} value={item.value}>
+                  <option key={idx} value={Number(item.value)}>
                     {item.value}
                   </option>
                 ))}

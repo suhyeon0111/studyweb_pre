@@ -60,13 +60,15 @@
 }
 .timelist-box {
     width: 3.5%;
+    margin-top: 20px;
     height: 860px;
     float: left;
-    font-size: 30px;
+    font-size: 28px;
 }
 .second-box {
     width: 40%;
     height: 860px;
+    margin-top: 20px;
     float: left;
 }
 .third-box {

@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import queryString from 'query-string';
 import axios from 'axios';
 import AddtimeList from './AddtimeList';
+import styled from 'styled-components';
 
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -16,6 +17,7 @@ const DataList = [
     subject: '수학',
     starttime: 110,
     endtime: 120,
+    drowsiness: 0,
     color: 1,
     created_at: '20220601',
   },
@@ -23,6 +25,7 @@ const DataList = [
     subject: '국어',
     starttime: 240,
     endtime: 410,
+    drowsiness: 0,
     color: 2,
     created_at: '20220601',
   },
@@ -30,6 +33,7 @@ const DataList = [
     subject: '과학',
     starttime: 410,
     endtime: 600,
+    drowsiness: 0,
     color: 3,
     created_at: '20220601',
   },
@@ -37,6 +41,7 @@ const DataList = [
     subject: '국어',
     starttime: 1300,
     endtime: 1420,
+    drowsiness: 0,
     color: 4,
     created_at: '20220601',
   },
@@ -44,6 +49,7 @@ const DataList = [
     subject: '국어',
     starttime: 1500,
     endtime: 1600,
+    drowsiness: 0,
     color: 5,
     created_at: '20220601',
   },
@@ -51,6 +57,7 @@ const DataList = [
     subject: '논리회로',
     starttime: 1910,
     endtime: 2230,
+    drowsiness: 0,
     color: 6,
     created_at: '20220601',
   },
@@ -129,11 +136,17 @@ const AddTimePage = () => {
         borderStyle: 'solid',
         float: 'left',
         color:
-          i < Data.length && key >= Data[i].starttime && key <= Data[i].endtime
+          i < Data.length &&
+          key >= Data[i].starttime &&
+          key <= Data[i].endtime &&
+          Data[i].drowsiness === 0
             ? color[i]
             : 'white',
         backgroundColor:
-          i < Data.length && key >= Data[i].starttime && key <= Data[i].endtime
+          i < Data.length &&
+          key >= Data[i].starttime &&
+          key <= Data[i].endtime &&
+          Data[i].drowsiness === 0
             ? color[i]
             : 'white',
       }}
@@ -230,7 +243,7 @@ const AddTimePage = () => {
               <span>머신러닝</span>
             </button>
             */}
-            {/* <AddtimeList /> */}
+            <AddtimeList users={Data} />
           </div>
         </div>
         <div className="timelist-box">{stdItem}</div>
@@ -242,7 +255,7 @@ const AddTimePage = () => {
               데이터 불러오기
             </button>
             <div>오늘의 공부시간</div>
-            <span style={{ margin: '0 auto' }}> {number}시간</span>
+            <span style={{ margin: '0 auto' }}>{i} 시간</span>
           </div>
         </div>
       </div>
