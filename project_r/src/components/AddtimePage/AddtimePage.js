@@ -57,7 +57,7 @@ const DataList = [
     subject: '논리회로',
     starttime: 1910,
     endtime: 2230,
-    drowsiness: 0,
+    drowsiness: 3666,
     color: 6,
     created_at: '20220601',
   },
@@ -174,12 +174,18 @@ const AddTimePage = () => {
   // 총 공부시간
   const number = 0;
 
+  const [T, setT] = useState(0);
+  const [H, setH] = useState(0);
+  const [M, setM] = useState(0);
+  const [S, setS] = useState(0);
+
   const onClick = (e) => {
     // setData(DataList);
     axios
       .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
       .then((response) => {
         setData(response.data);
+        ResultTime(response.data);
         console.log(response.data);
       })
       .catch((error) => {
@@ -191,6 +197,22 @@ const AddTimePage = () => {
       });
   };
 
+  const ResultTime = (Data) => {
+    setT(Data[5].drowsiness);
+    if (T >= 3600) {
+      setH(parseInt(T / 3600));
+      setT(T % 3600);
+      console.log(H);
+    }
+    if (T >= 60) {
+      setM(parseInt(T / 60));
+      setT(T % 60);
+      console.log(M);
+    } else {
+      setS(T);
+      console.log(S);
+    }
+  };
   return (
     <>
       <Helmet>
@@ -251,11 +273,16 @@ const AddTimePage = () => {
         <div className="second-box">{listItem}</div>
         <div className="third-box">
           <div className="Addsubject-box">
-            <button className="test-button" onClick={onClick}>
+            <button className="test-button1" onClick={onClick}>
               데이터 불러오기
             </button>
             <div>오늘의 공부시간</div>
             <span style={{ margin: '0 auto' }}>{i} 시간</span>
+            <div>오늘의 졸음시간</div>
+            <span style={{ margin: '0 auto' }}>
+              {ResultTime}
+              {H}시간 {M}분 {S}초
+            </span>
           </div>
         </div>
       </div>
