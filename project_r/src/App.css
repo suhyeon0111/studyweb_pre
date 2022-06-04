@@ -1,5 +1,17 @@
-.red {
-  background-color: white;
-  width: 31px;
-  height: 40px;
+/*아래 폰트*/
+@font-face {
+  font-family: "FrancoisOne";
+  font-weight: 100;
+  src: url("./font/FrancoisOne-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "AlfaSlabOne";
+  font-weight: 100;
+  src: url("./font/AlfaSlabOne-Regular.ttf") ;
+}
+@font-face {
+  font-family: "KITA";
+  font-weight: 100;
+  src: url("./font/KITA.ttf") ;
+}
+

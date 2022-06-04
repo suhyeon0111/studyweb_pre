@@ -1,6 +1,4 @@
-import React from 'react';
-import LoginPage from './components/LoginPage/LoginPage';
-import RegisterPage from './components/RegisterPage/RegisterPage';
+import React, { useState } from 'react';
 import MainPage from './components/MainPage/MainPage';
 import AddtimePage from './components/AddtimePage/AddtimePage';
 import TimePage from './components/TimePage/TimePage';
@@ -15,10 +13,8 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" exact={true} element={<MainPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/addtime" element={<AddtimePage />} />
-          <Route path="/time" element={<TimePage />} />
+          <Route path="/plan" element={<TimePage />} />
+          <Route path="/report" element={<AddtimePage />} />
         </Routes>
       </div>
     </>
