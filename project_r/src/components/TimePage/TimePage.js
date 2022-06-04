@@ -135,7 +135,7 @@ const TimePage = () => {
   const onClick = (e) => {
     // setData(DataList);
     axios
-      .get(`http://127.0.0.1:8000/report?created_at=${Object.values(qs)}`)
+      .get(`http://127.0.0.1:8000/plan?created_at=${Object.values(qs)}`)
       .then((response) => {
         setData(response.data);
         console.log(response.data);
